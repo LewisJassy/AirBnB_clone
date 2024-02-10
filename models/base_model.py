@@ -1,6 +1,11 @@
 import uuid #Universally Unique Identifier
 from datetime import datetime
-
+"""Defines unittests for models/base_model.py.
+Unittest classes:
+    TestBaseModel_instantiation
+    TestBaseModel_save
+    TestBaseModel_to_dict
+"""
 
 class BaseModel:
     """Basemodel class for  data models."""
