@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-"""Defines unittests for models/base_model.py.
-"""
-
 import sys
 sys.path.append('../../')
-
 from models.base_model import BaseModel
 
 my_model = BaseModel()
