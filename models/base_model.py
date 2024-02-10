@@ -1,5 +1,5 @@
 """Defines the BaseModel class."""
-import uuid #Universally Unique Identifier
+import uuid 
 from datetime import datetime
 
 class BaseModel:
