@@ -1,6 +1,7 @@
 """Defines the BaseModel class."""
 import uuid #Universally Unique Identifier
 from datetime import datetime
+from models import storage
 
 class BaseModel:
     """Basemodel class for  data models."""
@@ -9,6 +10,7 @@ class BaseModel:
         self.id = str(uuid.uuid4())
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
+        storage.new(self)
 
     def __str__(self): 
         """
@@ -21,6 +23,7 @@ class BaseModel:
         Updates the update timestamp of the instance to the current time.
         """
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """
