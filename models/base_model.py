@@ -1,28 +1,14 @@
-#!/usr/bin/python3
-"""This module is the base model for use in all other models
-"""
+import uuid #Universally Unique Identifier
+from datetime import datetime
 
 
-import datetime
-import models
-import uuid
-
-
-class BaseModel():
-    """base model parent class for all other classes
-       used in project
-    """
-
-    def __init__(self, *args, **kwargs):
-        """init method for base class used in instantiation
-        """
-        if len(kwargs) >= 1:
-            self.set_from_dict(**kwargs)
-        else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.datetime.now()
-            self.updated_at = datetime.datetime.now()
-            models.storage.new(self)
+class BaseModel:
+    """Basemodel class for  data models."""
+    def __init__(self): #initializes the instance with a unique ID, creation timestamp
+        # and update timestamp
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
 
     def __str__(self):
         """custom str method for str and print
